@@ -11,7 +11,7 @@ export class ProductListComponent implements OnInit {
     imageWidth: number = 50;
     imageMargin: number = 2;
     showImage: boolean = false;
-    
+
 
     _listFilter: string;
     get listFilter(): string {
@@ -80,6 +80,10 @@ export class ProductListComponent implements OnInit {
     constructor() {
         this.filteredProducts = this.products;
         this.listFilter = 'cart';
+    }
+
+    onRatingClicked(message: string) : void {
+        this.pageTitle = 'Product List: ' + message;
     }
 
     performFilter(filterBy: string): IProduct[] {
